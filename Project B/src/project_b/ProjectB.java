@@ -14,6 +14,7 @@ public class ProjectB
     {
         ProjectB pb = new ProjectB();
         pb.testmethod();
+        System.exit(1);
     }
     
 }
