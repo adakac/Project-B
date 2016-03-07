@@ -21,6 +21,8 @@ public class GUI extends javax.swing.JFrame
         pbOutput = new javax.swing.JProgressBar();
         pfInput = new javax.swing.JPasswordField();
         lbOutput = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Password Strengh Test");
@@ -35,6 +37,16 @@ public class GUI extends javax.swing.JFrame
         });
 
         lbOutput.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jMenu1.setText("Credits");
+        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                onCredits(evt);
+            }
+        });
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -57,7 +69,7 @@ public class GUI extends javax.swing.JFrame
                 .addComponent(lbOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pfInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -80,6 +92,7 @@ public class GUI extends javax.swing.JFrame
             default: {amount = 65; break;}
         }
         
+        if (text.length() >= 20){amount = 70;}
         if (text.length() >= 24){amount = 75;}
         if (text.length() >= 28){amount = 85;}
         if (text.length() >= 32){amount = 95;}
@@ -127,6 +140,12 @@ public class GUI extends javax.swing.JFrame
         if(text.contains("-") == true){amount +=  15;}
         if(text.contains("_") == true){amount +=  15;}
         if(text.contains("@") == true){amount +=  15;}
+        if(text.contains("ä") == true){amount +=  15;}
+        if(text.contains("ö") == true){amount +=  15;}
+        if(text.contains("ü") == true){amount +=  15;}
+        if(text.contains("Ä") == true){amount +=  15;}
+        if(text.contains("Ö") == true){amount +=  15;}
+        if(text.contains("Ü") == true){amount +=  15;}
         //</editor-fold>
         
         //<editor-fold defaultstate="collapsed" desc=" Boni für Zahlen (+5%) "> 
@@ -146,13 +165,15 @@ public class GUI extends javax.swing.JFrame
         if((
                   (text.contains("123") == true)
                 ||(text.contains("321") == true)
+                ||(text.contains("987") == true)
+                ||(text.contains("789") == true)
                 ||(text.contains("abc") == true)
                 ||(text.contains("ABC") == true)
                 ||(text.contains("asdf") == true)
                 ||(text.contains("ASDF") == true)
                 ||(text.contains("1337") == true)
                 )&&(text.length() < 12))
-        {amount -=  50;}
+        {amount -=  40;}
         //</editor-fold>
         
         //<editor-fold defaultstate="collapsed" desc=" Über und unter 100%, Farbausgabe "> 
@@ -185,6 +206,12 @@ public class GUI extends javax.swing.JFrame
         
     }//GEN-LAST:event_onInput
 
+    private void onCredits(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_onCredits
+        Credits credits = new Credits();
+        credits.setLocationRelativeTo(null);
+        credits.setVisible(true);
+    }//GEN-LAST:event_onCredits
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -194,7 +221,10 @@ public class GUI extends javax.swing.JFrame
         
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                if ("Windows".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -216,6 +246,8 @@ public class GUI extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel lbOutput;
     private javax.swing.JProgressBar pbOutput;
     private javax.swing.JPasswordField pfInput;

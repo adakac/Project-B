@@ -8,7 +8,7 @@ public class BL
     private void testmethod()
     {
         JOptionPane.showMessageDialog
-            (null, "This is a test program I am not responible for bad password combinations/damages resulting from my software.");
+            (null, "I am not responible for bad\npassword combinations/damages\nresulting from my software.");
     }
     
     private void startUI()
