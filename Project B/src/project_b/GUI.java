@@ -25,7 +25,7 @@ public class GUI extends javax.swing.JFrame
         jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Password Strengh Test");
+        setTitle("Password Strength Test");
         setResizable(false);
 
         pbOutput.setFocusable(false);
@@ -207,7 +207,7 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_onInput
 
     private void onCredits(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_onCredits
-        Credits credits = new Credits();
+        Credits credits = new Credits(this, true);
         credits.setLocationRelativeTo(null);
         credits.setVisible(true);
     }//GEN-LAST:event_onCredits
