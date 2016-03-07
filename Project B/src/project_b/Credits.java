@@ -49,7 +49,7 @@ public class Credits extends javax.swing.JDialog {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("hyperxlp.atgc@gmail.com");
+        jLabel4.setText("adaka.office@gmail.com");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setText("Greetings from Austria!");

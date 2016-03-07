@@ -85,7 +85,7 @@
           <Font name="Tahoma" size="11" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="hyperxlp.atgc@gmail.com"/>
+        <Property name="text" type="java.lang.String" value="adaka.office@gmail.com"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
